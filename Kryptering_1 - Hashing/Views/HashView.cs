@@ -1,5 +1,5 @@
 ﻿using Kryptering_1___Hashing.Enums;
-using Kryptering_1___Hashing.Managers.Interfaces;
+using Kryptering_1___Hashing.Managers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -74,6 +74,7 @@ namespace Kryptering_1___Hashing.Views
                 if(string.IsNullOrEmpty(key))
                 {
                     Stopwatch stopwatch = new Stopwatch();
+                    // Getting HASH data
                     stopwatch.Start();
                     byte[] hashedData = hashManager.Hash(input, (HashingMethods)hashingMethod);
                     stopwatch.Stop();

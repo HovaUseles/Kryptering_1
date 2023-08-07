@@ -1,4 +1,4 @@
-﻿using Kryptering_1___Hashing.Managers.Interfaces;
+﻿using Kryptering_1___Hashing.Managers;
 using Kryptering_1___Hashing.Views;
 using System;
 using System.Collections.Generic;

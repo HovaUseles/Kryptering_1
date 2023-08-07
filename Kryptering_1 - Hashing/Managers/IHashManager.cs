@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kryptering_1___Hashing.Managers.Interfaces
+namespace Kryptering_1___Hashing.Managers
 {
     /// <summary>
     /// Interface for Hash manager class that is responsible for passing Hash related request to Services

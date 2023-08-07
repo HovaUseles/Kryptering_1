@@ -1,5 +1,4 @@
 ﻿using Kryptering_1___Hashing.Enums;
-using Kryptering_1___Hashing.Managers.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
