@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kryptering_1 - Tilfældigheder", "Kryptering_1 - Tilfældigheder\Kryptering_1 - Tilfældigheder.csproj", "{D1AD26FD-D6CF-48E8-B119-9B250916A48D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kryptering_1 - Hashing", "Kryptering_1 - Hashing\Kryptering_1 - Hashing.csproj", "{667E865D-0879-481E-B192-DFB6FFA1A61D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kryptering_1 - Hashing", "Kryptering_1 - Hashing\Kryptering_1 - Hashing.csproj", "{667E865D-0879-481E-B192-DFB6FFA1A61D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kryptering_2 - Safe Password Storage", "Kryptering_2 - Safe Password Storage\Kryptering_2 - Safe Password Storage.csproj", "{0039C590-295D-4B2A-B96F-48087E92DED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{667E865D-0879-481E-B192-DFB6FFA1A61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667E865D-0879-481E-B192-DFB6FFA1A61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667E865D-0879-481E-B192-DFB6FFA1A61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0039C590-295D-4B2A-B96F-48087E92DED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0039C590-295D-4B2A-B96F-48087E92DED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0039C590-295D-4B2A-B96F-48087E92DED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0039C590-295D-4B2A-B96F-48087E92DED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
