@@ -21,11 +21,7 @@ namespace Kryptering_2___Safe_Password_Storage.GUI.Utilities
             // Loop views and display them until view nest returns null
             do
             {
-                IViewable returnedViewable = viewable.Show(); // returns a new view, null if view nest is complete
-                if(returnedViewable != null)
-                {
-                    viewable = returnedViewable;
-                }
+                viewable = viewable.Show(); // returns a new view, null if view nest is complete
             } while (viewable != null);
         }
     }

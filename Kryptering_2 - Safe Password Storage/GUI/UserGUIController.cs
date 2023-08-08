@@ -67,7 +67,7 @@ namespace Kryptering_2___Safe_Password_Storage.GUI
             }
             catch(KeyNotFoundException ex)
             {
-                return new ErrorView(ex.Message, new LoginView());
+                return new ErrorView(ex.Message, Index());
             }         
             catch (Exception ex) 
             { 

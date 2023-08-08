@@ -13,7 +13,17 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddSingleton(typeof(IUserRepository), typeof(MockUserRepository));
 builder.Services.AddSingleton(typeof(IPasswordRepository), typeof(MockPasswordRepository));
 builder.Services.AddTransient(typeof(ISaltService), typeof(RandomSaltService));
-builder.Services.AddTransient(typeof(IHashService), typeof(SingleHashService));
+
+// Switch between Standard Hash and PBKDF2 here
+bool usePBKDF = false;
+if (usePBKDF)
+{
+    builder.Services.AddTransient(typeof(IHashService), typeof(PBKDF2HashService)); // PBKDF2 Hash
+}
+else
+{
+    builder.Services.AddTransient(typeof(IHashService), typeof(SingleHashService)); // Standard Hash
+}
 
 using IHost host = builder.Build();
 
@@ -34,4 +44,3 @@ UserGUIController.userManager = userManager;
 
 // Displaying first View
 ViewRenderer.RenderView(UserGUIController.Index());
-
