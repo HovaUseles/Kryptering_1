@@ -12,6 +12,7 @@ namespace Kryptering_2___Safe_Password_Storage.Managers
     /// </summary>
     internal interface IUserManager
     {
+
         /// <summary>
         /// Create a new user
         /// </summary>
@@ -32,5 +33,21 @@ namespace Kryptering_2___Safe_Password_Storage.Managers
         /// </summary>
         /// <returns>All users</returns>
         public User[] GetAll();
+
+        /// <summary>
+        /// Login as a user via username and password
+        /// </summary>
+        /// <param name="username">Username of the user to login as</param>
+        /// <param name="password">Password of the user to login as</param>
+        /// <returns>The logged in user</returns>
+        public User LoginAsUser(string username, string password);
+
+        /// <summary>
+        /// Change the password of a user
+        /// </summary>
+        /// <param name="user">The user changing the on</param>
+        /// <param name="oldPassword">The old password for validation</param>
+        /// <param name="newPassword">The  new password to change to</param>
+        public void ChangePassword(User user, string oldPassword,  string newPassword);
     }
 }

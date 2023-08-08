@@ -29,7 +29,7 @@ namespace Kryptering_2___Safe_Password_Storage.Repositories
         /// Add the model to the data source
         /// </summary>
         /// <param name="model">The model to be added</param>
-        /// <returns>The added model</returns>
+        /// <returns>The added model with an identifier</returns>
         public T Add(T model);
 
         /// <summary>

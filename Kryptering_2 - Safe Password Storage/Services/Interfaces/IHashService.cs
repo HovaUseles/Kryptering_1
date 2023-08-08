@@ -18,7 +18,5 @@ namespace Kryptering_2___Safe_Password_Storage.Services.Interfaces
         /// <param name="salt">The salt value to include in the hash</param>
         /// <returns>Hashed data</returns>
         public byte[] HashPassword(string password, string salt);
-
-        protected byte[] HashData(byte[] data);
     }
 }

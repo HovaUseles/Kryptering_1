@@ -9,9 +9,19 @@ namespace Kryptering_2___Safe_Password_Storage.Repositories
 {
     internal class MockPasswordRepository : MockGenericRepository<Password>, IPasswordRepository
     {
-        public MockPasswordRepository()
+
+        public Password[] GetAllUserPasswords(User user)
         {
+            IEnumerable<Password> usersPasswords = MockData.Where(p => p.UserId == user.Id);
+            if (usersPasswords.Any() == false)
+            {
+                Exception ex = new Exception("User has no passwords");
+                ex.Data.Add("User", user);
+                throw ex;
+            }
+            return usersPasswords.ToArray();
         }
+
         public Password GetUserActivePassword(User user)
         {
             IEnumerable<Password> usersPasswords = MockData.Where(p => p.UserId == user.Id);

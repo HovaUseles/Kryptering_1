@@ -17,6 +17,7 @@ namespace Kryptering_2___Safe_Password_Storage.Repositories
         }
         public T Add(T model)
         {
+            model.Id = Guid.NewGuid();
             MockData.Add(model);
             return model;
         }

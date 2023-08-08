@@ -10,5 +10,6 @@ namespace Kryptering_2___Safe_Password_Storage.Repositories
     internal interface IPasswordRepository : IGenericRepository<Password>
     {
         public Password GetUserActivePassword(User user);
+        public Password[] GetAllUserPasswords(User user);
     }
 }
