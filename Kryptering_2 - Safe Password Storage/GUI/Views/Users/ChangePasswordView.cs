@@ -1,4 +1,5 @@
-﻿using Kryptering_2___Safe_Password_Storage.GUI.Interfaces;
+﻿using Kryptering_2___Safe_Password_Storage.GUI.Controllers;
+using Kryptering_2___Safe_Password_Storage.GUI.Interfaces;
 using Kryptering_2___Safe_Password_Storage.GUI.Utilities;
 using Kryptering_2___Safe_Password_Storage.Models;
 using System;

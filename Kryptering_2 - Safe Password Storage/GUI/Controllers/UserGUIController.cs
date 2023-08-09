@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kryptering_2___Safe_Password_Storage.GUI
+namespace Kryptering_2___Safe_Password_Storage.GUI.Controllers
 {
     /// <summary>
     /// Controller for user views
@@ -65,12 +65,12 @@ namespace Kryptering_2___Safe_Password_Storage.GUI
                 User loginAs = userManager.LoginAsUser(username, password);
                 return new UserMenuView(loginAs);
             }
-            catch(KeyNotFoundException ex)
+            catch (KeyNotFoundException ex)
             {
                 return new ErrorView(ex.Message, Index());
-            }         
-            catch (Exception ex) 
-            { 
+            }
+            catch (Exception ex)
+            {
                 return new ErrorView(ex.Message, new LoginView());
             }
 
