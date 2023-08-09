@@ -123,6 +123,7 @@ namespace Kryptering_2___Safe_Password_Storage.GUI.Utilities
             switch (userChoice.Key)
             {
                 case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
                     userChoiceIndex = 1;
                     break;
                 case ConsoleKey.D2:
@@ -149,18 +150,19 @@ namespace Kryptering_2___Safe_Password_Storage.GUI.Utilities
                 case ConsoleKey.D9:
                     userChoiceIndex = 9;
                     break;
-                default:
-                    Console.Clear();
-                    Console.WriteLine($"Input not recognised, please select a number between {1} and {viewNavigationOptions.Length}");
-                    Console.WriteLine("Press any key to continue");
-                    Console.ReadKey();
-                    return null;
             }
 
             // If a choice was made
-            if (userChoiceIndex > -1)
+            if (userChoiceIndex > -1 && userChoiceIndex < viewNavigationOptions.Length)
             {
                 return viewNavigationOptions[userChoiceIndex - 1];
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine($"Input not recognised, please select a number between {1} and {viewNavigationOptions.Length}");
+                Console.WriteLine("Press any key to continue");
+                Console.ReadKey();
             }
 
             return null;

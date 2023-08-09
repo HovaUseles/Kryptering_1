@@ -7,12 +7,14 @@ using Kryptering_2___Safe_Password_Storage.Services;
 using Kryptering_2___Safe_Password_Storage.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 // Setting up Depencency Injection
 HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddSingleton(typeof(IUserRepository), typeof(MockUserRepository));
 builder.Services.AddSingleton(typeof(IPasswordRepository), typeof(MockPasswordRepository));
 builder.Services.AddTransient(typeof(ISaltService), typeof(RandomSaltService));
+
 
 // Switch between Standard Hash and PBKDF2 here
 bool usePBKDF = false;
