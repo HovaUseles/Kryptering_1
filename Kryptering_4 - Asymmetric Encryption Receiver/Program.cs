@@ -1,8 +1,6 @@
 ﻿using Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Controllers;
-using Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Utilities;
 using Kryptering_4___Asymmetric_Encryption_Receiver.Managers;
 using Kryptering_4___Asymmetric_Encryption_Receiver.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

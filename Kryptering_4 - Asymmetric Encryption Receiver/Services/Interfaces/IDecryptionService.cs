@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Kryptering_4___Asymmetric_Encryption_Receiver.Services
 {
+    /// <summary>
+    /// Responsible for decryption logic
+    /// </summary>
     internal interface IDecryptionService
     {
         /// <summary>

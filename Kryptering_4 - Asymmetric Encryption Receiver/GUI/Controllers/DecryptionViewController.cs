@@ -1,10 +1,5 @@
 ﻿using Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Utilities;
 using Kryptering_4___Asymmetric_Encryption_Receiver.Managers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Controllers
 {
@@ -17,6 +12,9 @@ namespace Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Controllers
             DecryptionManager = decryptionManager;
         }
 
+        /// <summary>
+        /// Display the start menu
+        /// </summary>
         public void StartMenu()
         {
             Console.Clear();
@@ -37,6 +35,9 @@ namespace Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Controllers
             // Quit
         }
 
+        /// <summary>
+        /// Display view for generating encryption keys
+        /// </summary>
         public void GeneratePublicKey()
         {
             Console.Clear();
@@ -54,10 +55,14 @@ namespace Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Controllers
                 Console.WriteLine();
                 Console.WriteLine("Press any key to continue");
                 Console.ReadKey();
+                // Quit
             }
 
         }
 
+        /// <summary>
+        /// Displays View for decrypting message
+        /// </summary>
         public void DecryptMessage()
         {
             string input = ViewComponents.GetUserInput("Write encrypted message");
@@ -68,7 +73,7 @@ namespace Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Controllers
             Console.WriteLine();
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-            StartMenu();
+            StartMenu(); // Return to main menu
         }
     }
 }

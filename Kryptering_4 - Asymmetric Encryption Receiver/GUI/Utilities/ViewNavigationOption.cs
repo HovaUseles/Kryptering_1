@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Kryptering_4___Asymmetric_Encryption_Receiver.GUI.Utilities
 {
     internal class ViewNavigationOption

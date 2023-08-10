@@ -1,10 +1,5 @@
 ﻿using Kryptering_4___Asymmetric_Encryption_Receiver.Services;
-using Microsoft.Identity.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Kryptering_4___Asymmetric_Encryption_Receiver.Managers
 {
@@ -18,6 +13,10 @@ namespace Kryptering_4___Asymmetric_Encryption_Receiver.Managers
 
         private readonly IDecryptionService decryptionService;
 
+        /// <summary>
+        /// Constructor, takes an inject Decryption service
+        /// </summary>
+        /// <param name="decryptionService">Injected decryption service</param>
         public DecryptionManager(IDecryptionService decryptionService)
         {
             this.decryptionService = decryptionService;
@@ -27,12 +26,22 @@ namespace Kryptering_4___Asymmetric_Encryption_Receiver.Managers
             privateKeyPath = "c:\\temp\\privatekey.xml"; // Creating keys to temp folder
         }
 
+        /// <summary>
+        /// Generates encryption keys
+        /// </summary>
+        /// <returns>The path of the generated public key</returns>
         public string GenKeys()
         {
             decryptionService.GenNewKeys(publicKeyPath, privateKeyPath);
             return publicKeyPath;
         }
 
+        /// <summary>
+        /// Decrypts a message using the stored public and private keys
+        /// </summary>
+        /// <param name="messageToDecrypt">The encrypted message</param>
+        /// <returns>The decrypting message</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public string DecryptMessage(string messageToDecrypt)
         {
             // Validate input
