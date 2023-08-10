@@ -12,7 +12,8 @@ namespace Kryptering_3___Symmetric_Encryption.GUI.Controllers
 {
     internal static class EncrypterController
     {
-        private static EncryptionManager encryptionManager { get; set; }
+        public static EncryptionManager encryptionManager { get; set; }
+
         public static IViewable Index()
         {
             return new EncrypterIndexView();
@@ -24,14 +25,18 @@ namespace Kryptering_3___Symmetric_Encryption.GUI.Controllers
             {
                 return new EncryptMessageView();
             }
-            string encryptedMessage = encryptionManager.EncryptMessage(message, (EncryptionType)encryptionType);
-            return new ShowEncryptedMessageView(encryptedMessage);
+            string key;
+            string iv;
+            string messageAsHex;
+
+            string encryptedMessage = encryptionManager.EncryptMessage(message, (EncryptionType)encryptionType, out key, out iv, out messageAsHex);
+            return new ShowEncryptedMessageView(encryptedMessage, messageAsHex, key, iv);
         }
 
-        public static IViewable DecryptMessage(string message, EncryptionType encryptionType)
+        public static IViewable DecryptMessage(string encryptedMessage, EncryptionType encryptionType, string key, string iv)
         {
-            string decryptedMessage = encryptionManager.DecryptMessage(message, encryptionType);
-            return new ShowEncryptedMessageView(encryptedMessage);
+            string decryptedMessage = encryptionManager.DecryptMessage(encryptedMessage, encryptionType, key, iv);
+            return new ShowDecryptedMessageView(decryptedMessage);
         }
     }
 }

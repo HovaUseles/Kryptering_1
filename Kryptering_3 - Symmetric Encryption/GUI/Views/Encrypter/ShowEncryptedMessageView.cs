@@ -13,15 +13,29 @@ namespace Kryptering_3___Symmetric_Encryption.GUI.Views.Encrypter
     internal class ShowEncryptedMessageView : IViewable
     {
         private readonly string encryptedMessage;
+        private readonly string messageAsHex;
+        private readonly string key;
+        private readonly string iv;
 
-        public ShowEncryptedMessageView(string encryptedMessage)
+        public ShowEncryptedMessageView(
+            string encryptedMessage, 
+            string messageAsHex, 
+            string key, 
+            string iv
+            )
         {
             this.encryptedMessage = encryptedMessage;
+            this.messageAsHex = messageAsHex;
+            this.key = key;
+            this.iv = iv;
         }
         public IViewable Show()
         {
             ViewComponents.DisplayViewHeader("Message Encrypted");
             Console.WriteLine("Encrypted message: " + encryptedMessage);
+            Console.WriteLine("Encrypted message HEX: " + messageAsHex);
+            Console.WriteLine("Key: " + key);
+            Console.WriteLine("IV: " + iv);
             Console.WriteLine();
             
             List<ViewNavigationOption> viewNavigationOptions = new List<ViewNavigationOption>();
@@ -31,7 +45,7 @@ namespace Kryptering_3___Symmetric_Encryption.GUI.Views.Encrypter
                 viewNavigationOptions.Add(
                     new ViewNavigationOption(
                         "Decrypt with " + encryptionType.ToString(),
-                        EncrypterController.DecryptMessage(encryptedMessage, encryptionType)
+                        EncrypterController.DecryptMessage(encryptedMessage, encryptionType, key, iv)
                         )
                     );
             }
